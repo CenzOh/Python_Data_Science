@@ -2,7 +2,7 @@ import pandas as pd
 import pickle
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
-
+#simple classify code
 
 df = pd.read_csv('https://raw.githubusercontent.com/CUNYTechPrep/2020-fall-data-science/master/Week7-NLP/data/dem-vs-rep-tweets.csv')
 
@@ -26,8 +26,8 @@ model = MultinomialNB(alpha=.025)
 # Fit our model with our training data.
 model.fit(X, y)
 
-# Save our vectorizer and model.
-pickle.dump(vectorizer, open('models/vectorizer.pkl', 'wb') )
-pickle.dump(model, open('models/text-classifier.pkl', 'wb') )
+# Save our vectorizer and model and display layer.
+pickle.dump(vectorizer, open('models/vectorizer.pkl', 'wb') ) #wb means write binary
+pickle.dump(model, open('models/text-classifier.pkl', 'wb') ) #this pickle file is in binary
 
 
